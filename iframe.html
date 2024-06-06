@@ -11,6 +11,7 @@
     <div id="message">Please send some message from the input above.</div>
     <script>
       window.addEventListener("message", function (event) {
+        console.log(["github",event]);
         document.querySelector("#message").innerText =
           typeof event.data === "string"
             ? event.data
