@@ -11,7 +11,7 @@
     <div id="message">Please send some message from the input above.</div>
     <script>
       window.addEventListener("message", function (event) {
-        console.log(["github",event]);
+        console.log(["github receive",event]);
         document.querySelector("#message").innerText =
           typeof event.data === "string"
             ? event.data
@@ -24,6 +24,7 @@
       var button = document.querySelector("#sendMessage");
       button.addEventListener("click", function () {
         var message = document.querySelector("#messageText").value;
+        console.log(["github send",event]);
         window.parent.postMessage(message, "*");
       });
     </script>
